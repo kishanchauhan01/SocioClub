@@ -56,7 +56,7 @@
                 style="max-width: 400px; width: 90%;">
                 <h5 class="text-secondary mb-0">
                     Don't have an account?
-                    <span class="sign-up text-white icon-link icon-link-hover link-primary">Sign Up</span>
+                    <a href="../signup/" class="sign-up text-decoration-none text-white icon-link icon-link-hover link-primary" style="cursor: pointer;">Sign Up</a>
                 </h5>
             </div>
         </form>
