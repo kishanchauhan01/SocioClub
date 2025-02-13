@@ -107,9 +107,9 @@
 
 
         <!-- Account settings start -->
-        <div id="account" class="content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="account" style="background-color:rgba(34, 25, 25, 0.63);" class="content-item absolute left-0 md:top-0 top-16 account flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
 
-            <div class="relative w-full h-1/6 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
+            <div class="relative w-full h-1/5 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
                 <div class="absolute top-0 right-0 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="48" viewBox="0 0 116 38" fill="none">
                         <path d="M0 19C0 8.50659 8.50659 0 19 0H109C112.866 0 116 3.13401 116 7V31C116 34.866 112.866 38 109 38H7C3.13401 38 0 34.866 0 31V19Z" fill="#4E4E4E" fill-opacity="0.7" />
@@ -119,7 +119,7 @@
                 </div>
                 <div class="absolute left-12 md:left-20" style="bottom:-30%;">
                     <div class="relative">
-                        <img src="../../public/images/homess/profile.jpeg" alt="Profile Photo" class="md:w-32 md:h-32 w-24 h-24 rounded-full border-white" />
+                        <img src="../../../public/images/homess/profile.jpeg" alt="Profile Photo" class="md:w-32 md:h-32 w-24 h-24 rounded-full border-white" />
                         <div class="absolute bottom-0 left-16 mb-1 mr-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="48" viewBox="0 0 116 38" fill="none">
                                 <path d="M0 19C0 8.50659 8.50659 0 19 0H109C112.866 0 116 3.13401 116 7V31C116 34.866 112.866 38 109 38H7C3.13401 38 0 34.866 0 31V19Z" fill="#4E4E4E" fill-opacity="0.7" />
@@ -216,7 +216,7 @@
         </div>
 
         <!-- Security setting start -->
-        <div id="security" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="security" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
             <div class="grid grid-cols-1 ml-2 mt-3">
                 <div class="flex flex-col gap-2">
                     <label for="email" class="text-white text-2xl">Email</label>
@@ -269,7 +269,7 @@
 
 
         <!-- Privacy setting start -->
-        <div id="privacy" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="privacy" style="background-color:rgba(34, 25, 25, 0.63);"  class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
             <div class="grid grid-cols-1 md:grid-cols-5 sm:grid-cols-3 ml-2 mt-3 align-center gap-2">
                 <div class="flex flex-col gap-2">
                     <label for="password" class="text-white text-2xl">Password</label>
@@ -298,7 +298,7 @@
         </div>
 
         <!-- About us -->
-        <div id="about" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="about" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
             <h1>hi this is ansh</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam suscipit, odio labore hic sint omnis provident molestiae id nisi eaque vel in illum delectus quis doloribus voluptatem est deleniti eius totam libero non nam, esse fuga. Neque soluta veniam beatae.</p>
         </div>
