@@ -7,28 +7,45 @@
 
 .with-google p {
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
 }
 
 .eye {
-    width: 10%;
-    height: 100%;
-    display: inline;
-    margin-left: -14%;
-    vertical-align: middle;
+    width: 20px;  /* Fixed size for better alignment */
+    height: 20px;
+    position: absolute; /* Ensures correct positioning */
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
     cursor: pointer;
 }
 
+html, body {
+    height: auto; /* Ensures full document scroll */
+    overflow-y: auto !important; /* Allows vertical scrolling */
+}
+
+
 .hero {
-    min-height: 100vh;
-    padding: 1rem;
+    min-height: 100vh; /* Allows it to grow if needed */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    padding: 1rem;
 }
+
+
 
 .card {
     padding: 2rem;
     margin: 0;
+    width: 100%;
+    max-width: 400px; /* Ensures it doesn't stretch too much */
+}
+
+/* Optional: Smooth button hover effect */
+.btn:hover {
+    filter: brightness(1.1);
+    transition: all 0.2s ease-in-out;
 }
