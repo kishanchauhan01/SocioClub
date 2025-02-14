@@ -43,7 +43,7 @@
 
     <div class="flex flex-col sm:flex-row h-screen">
         <!-- Left side bar -->
-        <div class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block  " id="sidebar">
+        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block  " id="sidebar">
             <div class="flex flex-col h-screen">
                 <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600">
                     <span class="mr-2">
@@ -109,7 +109,7 @@
         <!-- Account settings start -->
         <div id="account" style="background-color:rgba(34, 25, 25, 0.63);" class="content-item absolute left-0 md:top-0 top-16 account flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
 
-            <div class="relative w-full h-1/5 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
+            <div class="relative w-full h-1/3 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
                 <div class="absolute top-0 right-0 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="48" viewBox="0 0 116 38" fill="none">
                         <path d="M0 19C0 8.50659 8.50659 0 19 0H109C112.866 0 116 3.13401 116 7V31C116 34.866 112.866 38 109 38H7C3.13401 38 0 34.866 0 31V19Z" fill="#4E4E4E" fill-opacity="0.7" />
