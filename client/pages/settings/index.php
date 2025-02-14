@@ -43,7 +43,7 @@
 
     <div class="flex flex-col sm:flex-row h-screen">
         <!-- Left side bar -->
-        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block  " id="sidebar">
+        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block h-screen " id="sidebar">
             <div class="flex flex-col h-screen">
                 <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600">
                     <span class="mr-2">
