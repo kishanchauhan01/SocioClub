@@ -11,8 +11,8 @@
 }
 
 .eye {
-    width: 20px;  /* Fixed size for better alignment */
-    height: 20px;
+    width: 30px;  /* Fixed size for better alignment */
+    height: 38px;
     position: absolute; /* Ensures correct positioning */
     top: 50%;
     right: 10px;
