@@ -1,15 +1,12 @@
-<?php include_once "../header.php" ?>
-
-<link rel="stylesheet" href="../../../public/css/login.css">
-<link rel="stylesheet" href="../../../public/css/setting.css">
-
+<?php include_once "../header.php"?>
+    <link rel="stylesheet" href="../../../public/css/setting.css">
 </head>
 
 <body class="bg-gray-900 text-white ">
 
     <div class="flex flex-col sm:flex-row h-screen">
         <!-- Left side bar -->
-        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block  " id="sidebar">
+        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block h-screen " id="sidebar">
             <div class="flex flex-col h-screen">
                 <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600">
                     <span class="mr-2">
@@ -271,94 +268,7 @@
 
     </div>
 
-    <script>
-        //! Side bar 
-        const hamburger = document.querySelector('.hamburger');
-        const sidebar = document.getElementById('sidebar');
-
-        // Toggle sidebar visibility when hamburger is clicked
-        hamburger.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
-            if (!sidebar.classList.contains('hidden')) {
-                hamburger.style.display = "none"; // Hide hamburger when sidebar is visible
-            }
-        });
-
-        // Close sidebar when clicking outside of it
-        document.addEventListener('click', (event) => {
-            const isClickInsideSidebar = sidebar.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-
-            // If the click is outside the sidebar and not on the hamburger, hide the sidebar
-            if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint is 768px 
-                if (!isClickInsideSidebar && !isClickOnHamburger) {
-                    sidebar.classList.add('hidden'); // Hide the sidebar
-                    hamburger.style.display = "block"; // Show the hamburger again
-                }
-            }
-        });
-
-
-
-        //! Security
-        const toggle = document.getElementById('toggle');
-        const toggleLabel = document.getElementById('toggle-label');
-        let isOn = false;
-
-        toggle.addEventListener('click', () => {
-            isOn = !isOn;
-            toggle.classList.toggle('bg-blue-600', isOn);
-            toggle.classList.toggle('bg-gray-300', !isOn);
-            toggleLabel.textContent = isOn ? 'On' : 'Off';
-            const circle = toggle.querySelector('.toggle-circle');
-            circle.style.transform = isOn ? 'translateX(100%)' : 'translateX(0)';
-        });
-
-
-        //! Privacy
-        function selectOption(option) {
-            const privateButton = document.getElementById('privateButton');
-            const publicButton = document.getElementById('publicButton');
-            const lockIcon = document.getElementById('lockIcon');
-            const humanIcon = document.getElementById('humanIcon');
-
-            if (option === 'private') {
-                privateButton.classList.add('bg-blue-500', 'text-white');
-                privateButton.classList.remove('hover:bg-gray-400');
-                publicButton.classList.remove('bg-blue-500', 'text-white');
-                publicButton.classList.add('hover:bg-gray-400');
-                lockIcon.classList.remove('hidden');
-                humanIcon.classList.add('hidden');
-            } else {
-                publicButton.classList.add('bg-blue-500', 'text-white');
-                publicButton.classList.remove('hover:bg-gray-400');
-                privateButton.classList.remove('bg-blue-500', 'text-white');
-                privateButton.classList.add('hover:bg-gray-400');
-                humanIcon.classList.remove('hidden');
-                lockIcon.classList.add('hidden');
-            }
-        }
-
-        // Set default selection to public
-        selectOption('public');
-
-
-        
-        //! js for click and show  
-        function showContent(section) {
-            // Hide all content items
-            const items = document.querySelectorAll('.content-item');
-            items.forEach(item => {
-                item.classList.add('hidden');
-            });
-
-            // Show the selected content item
-            const selectedItem = document.getElementById(section);
-            if (selectedItem) {
-                selectedItem.classList.remove('hidden');
-            }
-        }
-    </script>
+    <script src="../../../public/js/setting.js"></script>
 </body>
 
 </html>

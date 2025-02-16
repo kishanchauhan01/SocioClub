@@ -1,26 +1,26 @@
- /* 
+/* 
         ! Sidebar classes
         */
- /* Custom styles for the hamburger menu */
- .hamburger {
-     display: none;
- }
+/* Custom styles for the hamburger menu */
+.hamburger {
+    display: none;
+}
 
- @media (max-width: 768px) {
-     .hamburger {
-         display: block;
-     }
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
 
-     .sidebar {
-         width: 40%;
-         /* Adjust width for smaller screens */
-     }
- }
+    .sidebar {
+        width: 40%;
+        /* Adjust width for smaller screens */
+    }
+}
 
 
- /* 
+/* 
         ! security 
         */
- .toggle-circle {
-     transition: transform 0.3s ease;
- }
+.toggle-circle {
+    transition: transform 0.3s ease;
+}
