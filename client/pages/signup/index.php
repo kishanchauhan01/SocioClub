@@ -10,7 +10,7 @@
         <form class="signUp-form container needs-validation overflow-y-auto" novalidate id="form1">
             <div class="card bg-dark p-4 mx-auto mt-3" style="max-width: 50rem;">
                 <div class="heading mb-4">
-                    <h1 class="text-white text-center">SignUp to <span class="text-info">SocioClub</span></h1>
+                    <h1 class="text-white text-center fs-1">SignUp to <span class="text-info">SocioClub</span></h1>
                 </div>
 
                 <div class="fields">

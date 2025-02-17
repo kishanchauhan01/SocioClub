@@ -12,7 +12,7 @@
             onsubmit="handleSignup(event)">
             <div class="card bg-dark p-4" style="max-width: 400px; width: 90%;">
                 <div class="heading text-center mb-4">
-                    <h1 class="text-white">Welcome back to <span class="text-info">SocioClub</span></h1>
+                    <h1 class="text-white fs-1">Welcome back to <span class="text-info">SocioClub</span></h1>
                 </div>
                 <div class="fields w-100">
                     <label for="loginEmail" class="form-label text-white">Email</label>
