@@ -9,7 +9,7 @@ $(document).ready(function () {
         "Invalid format"
     );
 
-    // Fix: Correct $.validator reference
+    //
     $.validator.addMethod(
         "minAge",
         function (value, element, min) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
         "You must be at least 14 years old"
     );
 
-    // Fix: Correct password confirmation validation
+    //
     $.validator.addMethod(
         "matchPassword",
         function (value, element) {

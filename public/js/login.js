@@ -1,25 +1,37 @@
 // async function handleSignup(event) {
-//     console.log("hi");
-//     event.preventDefault(); // Prevent form from refreshing the page
+//     event.preventDefault(); // Prevent form from submitting traditionally
 
-//     const form = event.target;
-//     const formData = new FormData(form); // Collect form data
+//     const email = document.getElementById("emailID").value.trim();
+//     const password = document.getElementById("pswd").value.trim();
+
+//     if (!email || !password) {
+//         alert("Please enter both email and password!");
+//         return;
+//     }
+
+//     const formData = new FormData();
+//     formData.append("loginEmail", email);
+//     formData.append("loginPassword", password);
 
 //     try {
-//         const response = await fetch("/socioclub/server/login.php", {
+//         const response = await fetch("../../../server/login.php", {
 //             method: "POST",
 //             body: formData,
 //         });
 
-//         const result = await response.text(); // Handle response from PHP
-//         alert(result); // Display the response (success or error)
+//         const result = await response.json();
+//         console.log("Server Response:", result);
+
+//         if (result.status === "success") {
+//             window.location.href = result.redirect.replace(/\\/, ""); // Remove escape slashes
+//         } else {
+//             alert(result.message); // Show error message
+//         }
 //     } catch (error) {
 //         console.error("Error:", error);
-//         alert("An error occurred while signing up.");
+//         alert("Something went wrong. Please try again.");
 //     }
 // }
-
-
 
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#pswd");
@@ -35,4 +47,3 @@ togglePassword.addEventListener("click", () => {
         togglePassword.src = "../../../public/images/login/close-eye.png";
     }
 });
-

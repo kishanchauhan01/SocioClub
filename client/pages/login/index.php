@@ -6,9 +6,10 @@
 
 <body class="overflow-x-hidden">
 
-    <div class="hero bg-black vw-100 v-100 d-flex align-items-center justify-content-center overflow-x-hidden overflow-y-auto p-0">
+    <div
+        class="hero bg-black vw-100 v-100 d-flex align-items-center justify-content-center overflow-x-hidden overflow-y-auto p-0">
 
-        <form class="login-form d-flex flex-column justify-content-center align-items-center w-100"
+        <form class="login-form d-flex flex-column justify-content-center align-items-center w-100" method="POST" action="../../../server/login.php"
             onsubmit="handleSignup(event)">
             <div class="card bg-dark p-4" style="max-width: 400px; width: 90%;">
                 <div class="heading text-center mb-4">
@@ -25,7 +26,8 @@
                             class="form-control bg-dark p-2 text-white"
                             style="border: 0.2px solid gray; border-radius: 6px; padding-right: 40px;">
                         <img src="../../../public/images/login/close-eye.png" alt="Toggle Password"
-                            class="eye position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; cursor: pointer;"
+                            class="eye position-absolute"
+                            style="top: 50%; transform: translateY(-50%); right: 10px; cursor: pointer;"
                             id="togglePassword">
                     </div>
 
@@ -53,11 +55,11 @@
                 </div>
             </div>
 
-            <div class="card bg-dark mt-3 py-3 text-center"
-                style="max-width: 400px; width: 90%;">
+            <div class="card bg-dark mt-3 py-3 text-center" style="max-width: 400px; width: 90%;">
                 <h5 class="text-secondary mb-0">
                     Don't have an account?
-                    <a href="../signup/" class="sign-up text-decoration-none text-white link-primary" style="cursor: pointer;">Sign Up</a>
+                    <a href="../signup/" class="sign-up text-decoration-none text-white link-primary"
+                        style="cursor: pointer;">Sign Up</a>
                 </h5>
             </div>
         </form>
