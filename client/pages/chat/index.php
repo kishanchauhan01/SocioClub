@@ -4,9 +4,9 @@
 
 <body class="bg-gray-900 text-white ">
 
-    <div class="flex flex-col sm:flex-row h-100%">
+    <div class="flex flex-col sm:flex-row h-screen">
         <!-- Left side bar -->
-        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block" id="sidebar">
+        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 w-1/3 md:w-1/5 lg:w-1/6 p-4 sticky top-0 z-20 rounded-lg hidden md:block h-screen " id="sidebar">
             <div class="flex flex-col h-screen">
                 <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600">
                     <span class="mr-2">
@@ -70,7 +70,7 @@
 
 
         <!-- Account settings start -->
-        <div id="account" style="background-color:rgba(34, 25, 25, 0.63);" class="content-item absolute left-0 md:top-0 top-16 account flex-1 p-4 w-screen min-h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="account" style="background-color:rgba(34, 25, 25, 0.63);" class="content-item absolute left-0 md:top-0 top-16 account flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
 
             <div class="relative w-full h-1/3 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
                 <div class="absolute top-0 right-0 p-2">
