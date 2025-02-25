@@ -1,5 +1,5 @@
-<?php include_once "../header.php"?>
-    <link rel="stylesheet" href="../../../public/css/setting.css">
+<?php include_once "../header.php" ?>
+<link rel="stylesheet" href="../../../public/css/setting.css">
 </head>
 
 <body class="bg-gray-900 text-white ">
@@ -72,7 +72,7 @@
         <!-- Account settings start -->
         <div id="account" style="background-color:rgba(34, 25, 25, 0.63);" class="content-item absolute left-0 md:top-0 top-16 account flex-1 p-4 w-screen min-h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
 
-            <div class="relative w-full h-1/3 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
+            <div class="relative w-full h-1/4 bg-blue-600 rounded-lg mb-10" style="background-image: url('../../../public/images/homess/profile.jpeg'); background-size: cover; background-position: center;">
                 <div class="absolute top-0 right-0 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="48" viewBox="0 0 116 38" fill="none">
                         <path d="M0 19C0 8.50659 8.50659 0 19 0H109C112.866 0 116 3.13401 116 7V31C116 34.866 112.866 38 109 38H7C3.13401 38 0 34.866 0 31V19Z" fill="#4E4E4E" fill-opacity="0.7" />
@@ -152,22 +152,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 m-2 mt-1">
-                    <div class="flex flex-col gap-2">
-                        <label for="password" class="text-white text-2xl">Email</label>
-                        <input type="password" name="password" id="pswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
-                        <div class="invalid-feedback">
-                            Please enter a password.
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="rePassword" class="text-white text-2xl">Password</label>
-                        <input type="password" name="rePassword" id="rpswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
-                        <div class="invalid-feedback">
-                            Please re-enter the password.
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="mt-12 flex justify-center ">
                     <button class="bg-blue-500 hover:bg-blue-800 text-white py-2 rounded w-full md:w-1/4 text-2xl font-black" style="background-color:#D97E7E;">save changes</button>
@@ -180,29 +165,52 @@
 
         <!-- Security setting start -->
         <div id="security" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
-            <div class="grid grid-cols-1 ml-2 mt-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 ml-2 mt-5 align-center gap-2">
                 <div class="flex flex-col gap-2">
-                    <label for="email" class="text-white text-2xl">Email</label>
-                    <input type="email" name="email" id="eamilId" class="bg-gray-900 text-white border border-gray-900 rounded-lg w-full p-2" required>
-                    <div class="invalid-feedback">
-                        Please enter an email.
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2  ml-2 mt-3 align-center gap-2">
-                <div class="flex flex-col gap-2 ">
-                    <label for="password" class="text-white text-2xl">Password</label>
-                    <input type="password" name="password" id="pswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
+                    <label for="password" class="text-white text-3xl font-bold">Change Email</label> 
+                    <input type="password" name="password" id="pswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     <div class="invalid-feedback">
                         Please enter a password.
                     </div>
                 </div>
                 <div class="flex items-end mb-1 gap-4">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded w-1/4 font-bold" type="submit" style="background-color:#D97E7E;">Show</button>
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded w-1/4 font-bold" type="submit" style="background-color:#133149;">Change</button>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded w-1/4 font-bold transition duration-200" type="submit">Chnage</button>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2  ml-2 mt-3 align-center gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 ml-2 mt-5 align-center gap-2">
+                <div class="flex flex-col gap-2">
+                    <label for="password" class="text-white text-3xl font-bold">Change Password</label>
+                    <label for="password" class="text-white text-2xl">First Enter Current Password</label>
+                    <input type="password" name="password" id="pswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div class="invalid-feedback">
+                        Please enter a password.
+                    </div>
+                </div>
+                <div class="flex items-end mb-1 gap-4">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded w-1/4 font-bold transition duration-200" type="submit">Next</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 m-2">
+                <div class="flex flex-col gap-2">
+                    <label for="firstName" class="text-white text-2xl">Enter New Password : </label>
+                    <input type="text" name="firstName" id="first-name" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="lastName" class="text-white text-2xl">Re-enter New Password :</label>
+                    <input type="text" name="lastName" id="last-name" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="flex items-end mb-1 gap-4">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded w-1/4 font-bold transition duration-200" type="submit">Submit</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2  ml-2 mt-4 align-center gap-2">
                 <div class="flex flex-col gap-2">
                     <label for="password" class="text-white text-2xl">Mobile</label>
                     <input type="number" name="password" id="pswd" class="bg-gray-800 text-white border border-gray-900 rounded-lg w-full p-2" required>
@@ -232,7 +240,7 @@
 
 
         <!-- Privacy setting start -->
-        <div id="privacy" style="background-color:rgba(34, 25, 25, 0.63);"  class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
+        <div id="privacy" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
             <div class="grid grid-cols-1 md:grid-cols-5 sm:grid-cols-3 ml-2 mt-3 align-center gap-2">
                 <div class="flex flex-col gap-2">
                     <label for="password" class="text-white text-2xl">Password</label>
@@ -261,9 +269,34 @@
         </div>
 
         <!-- About us -->
-        <div id="about" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-4 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative ">
-            <h1>hi this is ansh</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam suscipit, odio labore hic sint omnis provident molestiae id nisi eaque vel in illum delectus quis doloribus voluptatem est deleniti eius totam libero non nam, esse fuga. Neque soluta veniam beatae.</p>
+        <div id="about" style="background-color:rgba(34, 25, 25, 0.63);" class="hidden content-item absolute left-0 md:top-0 top-16 account bg-gray-900 flex-1 p-6 w-screen h-screen md:w-4/5 lg:w-5/6 md:ml-1/5 lg:ml-1/6 z-10 md:relative">
+            <div class="container mx-auto mt-5">
+                <h2 class="text-white text-4xl font-bold text-center mb-6">About Socioclub</h2>
+
+                <section class="mb-6">
+                    <h3 class="text-white text-2xl font-semibold mb-2">Our Story</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Socioclub is a vibrant social media platform designed to connect people from all walks of life. Our mission is to create a space where users can share their thoughts, experiences, and creativity through posts, comments, and likes. We believe in the power of community and strive to foster meaningful connections among our users.
+                    </p>
+                </section>
+
+                <section class="mb-6">
+                    <h3 class="text-white text-2xl font-semibold mb-2">Our Vision</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        At Socioclub, we envision a world where everyone can express themselves freely and connect with others who share their interests. Our goal is to empower individuals to share their stories and engage with a diverse community, making social interaction enjoyable and enriching.
+                    </p>
+                </section>
+
+                <section class="mb-6">
+                    <h3 class="text-white text-2xl font-semibold mb-2">Our Values</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li><strong>Community:</strong> We prioritize building a supportive and inclusive community where everyone feels welcome.</li>
+                        <li><strong>Engagement:</strong> We encourage active participation, allowing users to interact through comments, likes, and shares.</li>
+                        <li><strong>Innovation:</strong> We continuously improve our platform to enhance user experience and introduce new features.</li>
+                        <li><strong>Respect:</strong> We promote respectful interactions and strive to create a safe environment for all users.</li>
+                    </ul>
+                </section>
+            </div>
         </div>
 
     </div>
