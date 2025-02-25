@@ -245,7 +245,7 @@
                     <a href=""><img src="../../../public/images/homess/search.png" alt="" style="width: 38px;"></a>
                 </li>
                 <li>
-                    <a href="../settings/setting.php"><img src="../../../public/images/homess/setting.png" alt=""
+                    <a href="../settings/"><img src="../../../public/images/homess/setting.png" alt=""
                             style="width: 38px;"></a>
                 </li>
                 <li>

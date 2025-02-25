@@ -11,7 +11,7 @@
 
 <!-- for-desktop  -->
 <div
-    class="nav-bar col-md-2 d-none d-md-block  bg-black text-white text-center d-md-flex flex-md-column justify-content-md-between align-items-md-center">
+    class="nav-bar col-md-2 d-none d-md-block  bg-black text-white text-center d-md-flex flex-md-column justify-content-md-between align-items-md-center"> 
     <h2 class="heading mt-md-2 fs-2">SocioClub</h2>
     <nav class="nav-links h-50">
         <ul class="list-unstyled d-md-flex flex-md-column h-100 justify-content-md-around align-items-md-start">
@@ -27,7 +27,7 @@
                 <div class="d-md-flex justify-content-center w-75">
 
                     <a href="#" class="text-decoration-none text-white fw-bolder fs-5" data-bs-toggle="offcanvas"
-                    data-bs-target="#notificationSidebar" aria-controls="notificationSidebar">notification</a>
+                        data-bs-target="#notificationSidebar" aria-controls="notificationSidebar">notification</a>
                 </div>
             </li>
             <li class="search-link d-md-flex justify-content-md-between align-items-md-center">
@@ -40,7 +40,7 @@
             <li class="settings-link d-md-flex justify-content-md-between align-items-md-center">
                 <img src="../../../public/images/homess/setting.png" alt="">
                 <div class="d-md-flex justify-content-center w-75">
-                    
+
                     <a href="../settings/" class="text-decoration-none text-white fw-bolder fs-5">Settings</a>
                 </div>
             </li>

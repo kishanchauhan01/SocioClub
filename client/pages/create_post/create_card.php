@@ -11,8 +11,10 @@
                 </div>
             </div>
             <div class="cancel w-25 d-flex justify-content-end align-items-center px-2">
-                <img src="../../../public/images/create_post/close.png" alt="close"
-                    style="width: 30%; cursor: pointer;">
+                <a href="../userprofile/" style="width: 30%; height: 100%;" class="d-flex justify-content-center align-items-center">
+                    <img src="../../../public/images/create_post/close.png" alt="close"
+                        style="width: 100%; cursor: pointer;">
+                </a>
             </div>
         </div>
 
