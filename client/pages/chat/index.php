@@ -25,7 +25,7 @@
         <!-- Left side bar -->
         <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 sticky top-0 z-20 rounded-lg hidden md:block" id="sidebar">
             <div class="flex flex-col h-screen">
-                <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600">
+                <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600" onclick="window.location.href='../home/index.php'">
                     <span class="mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 60 60" fill="none">
                             <path d="M11.25 53.75H48.75" stroke="#FC8A8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
@@ -38,7 +38,7 @@
 
                 <div class="tab max-w-xs overflow-hidden">
                     <ul class="flex flex-col items-center space-y-1 list-none p-0 m-0">
-                        <li class="flex items-center p-2 rounded-lg hover:bg-gray-600 cursor-pointer" onclick="showContent('account')">
+                        <li class="flex items-center p-2 rounded-lg hover:bg-gray-600 cursor-pointer" onclick="window.location.href=''">
                             <span class="mr-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.9101 13.1085C4.9101 8.68273 8.4979 5.09493 12.9237 5.09493C17.3494 5.09493 20.9372 8.68273 20.9372 13.1085C20.9372 17.5343 17.3494 21.1221 12.9237 21.1221C8.4979 21.1221 4.9101 17.5343 4.9101 13.1085ZM12.9237 1.08815C6.28501 1.08815 0.90332 6.46984 0.90332 13.1085C0.90332 19.7472 6.28501 25.1288 12.9237 25.1288C15.2451 25.1288 17.4128 24.4708 19.2505 23.331L24.7491 28.8297C25.8249 29.9054 27.5691 29.9054 28.6448 28.8297C29.7206 27.7539 29.7206 26.0097 28.6448 24.934L23.1462 19.4353C24.286 17.5977 24.944 15.4299 24.944 13.1085C24.944 6.46984 19.5623 1.08815 12.9237 1.08815Z" fill="#FFEAEA" />
@@ -46,7 +46,7 @@
                                 </svg>
                             </span>
                         </li>
-                        <li class="flex items-center p-2 rounded-lg hover:bg-gray-600 cursor-pointer" onclick="showContent('security')">
+                        <li class="flex items-center p-2 rounded-lg hover:bg-gray-600 cursor-pointer" onclick="window.location.href='../settings/index.php'">
                             <span class="mr-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9247 10.3169C13.1586 10.3169 10.9163 12.5593 10.9163 15.3254C10.9163 18.0915 13.1586 20.3339 15.9247 20.3339C18.6908 20.3339 20.9332 18.0915 20.9332 15.3254C20.9332 12.5593 18.6908 10.3169 15.9247 10.3169ZM13.4205 15.3254C13.4205 13.9423 14.5417 12.8211 15.9247 12.8211C17.3078 12.8211 18.429 13.9423 18.429 15.3254C18.429 16.7084 17.3078 17.8296 15.9247 17.8296C14.5417 17.8296 13.4205 16.7084 13.4205 15.3254Z" fill="white" />
@@ -136,29 +136,40 @@
                 <div class="shrink-0 self-end max-w-full h-0.5 border-2 border-solid border-stone-600" role="separator"></div>
             </header>
 
-            <section class="flex flex-col flex-grow gap-5 justify-between items-start text-black mt-4 overflow-y-auto" role="log" aria-label="Chat messages">
-                <article
-                    class="flex relative flex-col self-end px-4 pt-1.5 pb-4 mt-9 text-2xl rounded-none w-[8.5rem] hover:shadow-lg transition-shadow"
-                    style="aspect-ratio: 3.513"
-                    role="article">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/bd2f17561c9249ef9149481515aca2d2/df653d7e198bf73f6f385c11b77eae35d1fcb978d14fe147721b6c276ef1c4df"
-                        class="object-cover absolute inset-0 size-full"
-                        alt="Message background" />
-                    <p class="relative z-10 select-text">i am fine</p>
-                </article>
-                <article
-                    class="flex relative flex-col self-start px-2.5 pt-1 pb-3.5 text-xl rounded-none w-[19.5rem] hover:shadow-lg transition-shadow"
-                    style="aspect-ratio: 8.211"
-                    role="article">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/bd2f17561c9249ef9149481515aca2d2/7845e8fbb440c01ef97db44e71ecf4db27cd5010fd4dfcec249cd224b16fb6cc"
-                        class="object-cover absolute inset-0 size-full"
-                        alt="Message background" />
-                    <p class="relative z-10 select-text">hey how are you kishan</p>
-                </article>
+            <!-- chat section -->
+            <section class="flex flex-col flex-grow gap-5 justify-end items-start text-black mt-4 overflow-y-auto" role="log" aria-label="Chat messages">
+                <ul class="list-none p-0 m-0 w-full">
+                    <li class="flex justify-start mb-2">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">Hey, shu kar chho </p>
+                        </div>
+                    </li>
+                    <li class="flex justify-start mb-2">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">Hey, shu 2 kar chho </p>
+                        </div>
+                    </li>
+                    <li class="flex justify-end mb-2">
+                        <div class="bg-green-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">nothing . </p>
+                        </div>
+                    </li>
+                    <li class="flex justify-start mb-2">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">What are you up to today?</p>
+                        </div>
+                    </li>
+                    <li class="flex justify-end mb-2">
+                        <div class="bg-green-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">project ma kaam kru chhe</p>
+                        </div>
+                    </li>
+                    <li class="flex justify-start mb-2">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
+                            <p class="select-text">this is last message</p>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
             <footer class="flex flex-wrap gap-5 justify-between pr-2 pl-5 mt-5 w-full text-3xl rounded-2xl bg-slate-800 text-neutral-400 hover:bg-slate-700 transition-colors" style="margin-top: auto;">
