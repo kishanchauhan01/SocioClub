@@ -8,20 +8,45 @@
     }
 
     .scrollbar-hide {
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
     }
 
-    /* chat  */
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1000px) {
+        .sidebar {
+            display: none; /* Hide sidebar */
+        }
+
+        .header-title {
+            display: flex; /* Show home button */
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .profile-bar {
+            width: 100%; /* Profile bar full width */
+        }
+
+        .header-title {
+            font-size: 0.8rem; /* Smaller home button */
+        }
+
+        .chat-area {
+            width: 100%; /* Chat area full width */
+        }
+    }
 </style>
 
 <body class="bg-gray-900 text-white ">
 
     <div class="flex flex-col sm:flex-row h-100%">
         <!-- Left side bar -->
-        <div style="background-color:rgba(11, 10, 10, 0.63);" class="sidebar bg-gray-800 sticky top-0 z-20 rounded-lg hidden md:block" id="sidebar">
+        <div class="sidebar bg-gray-800 sticky top-0 z-20 rounded-lg hidden md:block" id="sidebar">
+            <!-- Sidebar content -->
             <div class="flex flex-col h-screen">
                 <div class="flex items-center bg-gray-700 rounded-lg p-2 mb-4 cursor-pointer hover:bg-gray-600" onclick="window.location.href='../home/index.php'">
                     <span class="mr-2">
@@ -65,12 +90,22 @@
                     </ul>
                 </div>
             </div>
+        </div> 
+
+        <div class="header-title">
+            <div class="flex items-center cursor-pointer" onclick="window.location.href='../home/index.php'">
+                <span class="mr-2">
+                    <!-- Home Icon SVG -->
+                </span>
+                <span class="text-lg">Home</span>
+            </div>
         </div>
 
-        <div class="rounded-none w-1/6" style="background-color: #1B1F23;" aria-label="Chat profiles">
+        <div class="profile-bar rounded-none w-1/6" style="background-color: #1B1F23;" aria-label="Chat profiles">
             <section class="pt-2.5 w-full bg-[#18181B] pb-[35rem] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
                 <div class="flex flex-col pl-1.5 w-full">
-                    <ul class="flex list-none p-0 m-0 overflow-y-auto h-screen scrollbar-hide w-full"> <!-- Added classes for scrolling -->
+                    <ul class="flex list-none p-0 m-0 overflow-y-auto h-screen scrollbar-hide w-full">
+                        <!-- Profile List Items -->
                         <li class="flex flex-col md:flex-row w-full">
                             <div class="flex flex-col gap-3.5 w-full">
                                 <div class="flex items-center  hover:bg-gray-800 transition duration-300 p-2 rounded w-full">
@@ -91,13 +126,9 @@
             </section>
         </div>
 
-        <main
-            class="flex flex-col h-screen w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            role="main"
-            aria-label="Chat interface">
-
+        <main class="flex flex-col h-screen w-full focus:outline-none focus:ring-2 focus:ring-blue-500 chat-area" role="main" aria-label="Chat interface">
             <header class="flex flex-col pt-1.5 pl-2 w-full whitespace-nowrap rounded bg-zinc-800">
-                <div style="background-color: #282B27;" class="flex gap-2 self-start w-full rounded-2xl">
+            <div style="background-color: #282B27;" class="flex gap-2 self-start w-full rounded-2xl">
                     <img
                         loading="lazy"
                         src="https://cdn.builder.io/api/v1/image/assets/bd2f17561c9249ef9149481515aca2d2/f4ae4fef877ac4cfe6540e096988883e270ff5e4d5137c05556e06acf0e83ee4"
@@ -111,9 +142,10 @@
                 <div class="shrink-0 self-end max-w-full h-0.5 border-2 border-solid border-stone-600" role="separator"></div>
             </header>
 
-            <!-- chat section -->
+            <!-- Chat Section -->
             <section class="flex flex-col flex-grow gap-5 justify-end items-start text-black mt-4 overflow-y-auto" role="log" aria-label="Chat messages">
                 <ul class="list-none p-0 m-0 w-full">
+                    <!-- Chat Messages -->
                     <li class="flex justify-start mb-2">
                         <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
                             <p class="select-text">Hey, shu kar chho </p>
@@ -135,12 +167,11 @@
             <footer class="flex flex-wrap gap-5 justify-between pr-2 pl-5 mt-5 w-full text-3xl rounded-2xl bg-slate-800 text-neutral-400 hover:bg-slate-700 transition-colors" style="margin-top: auto;">
                 <label for="chatInput" class="sr-only">Type your message</label>
                 <input type="text" id="chatInput" placeholder="chat something here :)" class="bg-transparent border-none outline-none text-neutral-400 flex-grow placeholder-neutral -500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg transition-all" aria-label="Chat input" />
-                <button class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p- 2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
-                    <img loading="lazy" src="../../../public/images/chat/send.svg" class="object-contain shrink-0 w-[4.4rem] hover:opacity-90 transition-opacity" style="aspect-ratio: 1.16" alt="Send button" />
+                <button class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
+                    <img loading="lazy" src="../../../public/images/chat/send.svg" class="object-contain shrink-0 w-[4.4rem] hover:opacity-90 transition-opacity" style="aspect-ratio: 1.16" alt="Send button " />
                 </button>
             </footer>
         </main>
-
     </div>
 
 </body>
