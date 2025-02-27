@@ -36,9 +36,9 @@
 } */
 
 .home-link {
-    /* background-color: #212529;
-    border-radius: 20px; */
+    border-radius: 20px;
     padding: 5px;
+    transition: all 0.5s;
 }
 
 .home-link img {

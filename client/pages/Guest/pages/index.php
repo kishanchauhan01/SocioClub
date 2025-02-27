@@ -2,54 +2,10 @@
 
 <style>
   body {
-    background-color: rgb(34, 34, 34); /* Dark background */
-    color: #fff; /* White text */
-  }
-
-  .btn-warning {
-    background-color: #ffc107;
-    /* Original warning color */
-    border-color: #ffc107;
-    /* Original warning border color */
-  }
-
-  .btn-warning:hover {
-    background-color: #e0a800;
-    /* Darker shade on hover */
-    border-color: #d39e00;
-    /* Darker border on hover */
-  }
-
-  .carousel-inner img {
-    filter: brightness(0.8);
-    /* Slightly darken carousel images */
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(255, 255, 255, 0.5);
-    /* White icons with transparency */
-  }
-
-  .carousel-control-prev-icon:hover,
-  .carousel-control-next-icon:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Lighter on hover */
-  }
-
-  .navbar {
-    background-color: #333;
-    /* Dark navbar */
-  }
-
-  .navbar a {
+    background-color: rgb(34, 34, 34);
+    /* Dark background */
     color: #fff;
-    /* White text for navbar links */
-  }
-
-  .navbar a:hover {
-    color: #ffc107;
-    /* Change color on hover */
+    /* White text */
   }
 </style>
 
@@ -103,11 +59,11 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div> 
+</div>
 
 
 <div class="text-center py-3" style="background-color: #333; color: #fff;">
-    <p class="mb-0">© 2025 Socioclub. All rights reserved.</p>
+  <p class="mb-0">© 2025 Socioclub. All rights reserved.</p>
 </div>
 
 <script>
