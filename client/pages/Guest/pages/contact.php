@@ -102,50 +102,95 @@
   <p class="mb-0">© 2025 Socioclub. All rights reserved.</p>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    let valid = true;
+  $(document).ready(function() {
+    // Add regex validation method
+    $.validator.addMethod(
+      "regex",
+      function(value, element, regexp) {
+        let re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+      },
+      "Invalid format"
+    );
 
-    // Clear previous error messages
-    document.getElementById('nameError').innerText = '';
-    document.getElementById('emailError').innerText = '';
-    document.getElementById('mobileError').innerText = '';
+    $("#contactForm").validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 3,
+          maxlength: 50,
+          regex: "^[a-zA-Z ]+$",
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        mobile: {
+          required: true,
+          regex: "^[0-9]{10}$",
+        },
+        subject: {
+          required: true,
+          minlength: 5,
+          maxlength: 100,
+        },
+        message: {
+          required: true,
+          minlength: 10,
+          maxlength: 500,
+        },
+        termsCheck: {
+          required: true,
+        },
+      },
 
-    // Validate name
-    const name = document.getElementById('name').value.trim();
-    if (name === '') {
-      document.getElementById('nameError').innerText = 'Enter your name';
-      document.getElementById('name').classList.add('error');
-      valid = false;
-    } else {
-      document.getElementById('name').classList.remove('error');
-    }
+      messages: {
+        name: {
+          required: "Name is required",
+          minlength: "Name must contain at least 3 characters",
+          maxlength: "Name cannot exceed 50 characters",
+          regex: "Name should contain only alphabetical characters and spaces",
+        },
+        email: {
+          required: "Email is required",
+          email: "Enter a valid email address",
+        },
+        mobile: {
+          required: "Mobile number is required",
+          regex: "Enter a valid 10-digit mobile number",
+        },
+        subject: {
+          required: "Subject is required",
+          minlength: "Subject must contain at least 5 characters",
+          maxlength: "Subject cannot exceed 100 characters",
+        },
+        message: {
+          required: "Message is required",
+          minlength: "Message must contain at least 10 characters",
+          maxlength: "Message cannot exceed 500 characters",
+        },
+        termsCheck: {
+          required: "You must agree to the terms and conditions",
+        },
+      },
 
-    // Validate email
-    const email = document.getElementById('email').value.trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
-    if (email === '' || !emailPattern.test(email)) {
-      document.getElementById('emailError').innerText = 'Enter a valid email address';
-      document.getElementById('email').classList.add('error');
-      valid = false;
-    } else {
-      document.getElementById('email').classList.remove('error');
-    }
+      errorElement: "div",
+      errorPlacement: function(error, element) {
+        error.addClass("invalid-feedback");
+        element.after(error);
+      },
 
-    // Validate mobile number
-    const mobile = document.getElementById('mobile').value.trim();
-    const mobilePattern = /^\d{10}$/; // 10 digit mobile number
-    if (mobile === '' || !mobilePattern.test(mobile)) {
-      document.getElementById('mobileError').innerText = 'Enter a valid mobile number';
-      document.getElementById('mobile').classList.add('error');
-      valid = false;
-    } else {
-      document.getElementById('mobile').classList.remove('error');
-    }
+      highlight: function(element) {
+        $(element).addClass("is-invalid").removeClass("is-valid");
+      },
 
-    // Prevent form submission if validation fails
-    if (!valid) {
-      event.preventDefault();
-    }
+      unhighlight: function(element) {
+        $(element).addClass("is-valid").removeClass("is-invalid");
+      },
+    });
   });
 </script>
