@@ -1,4 +1,4 @@
-<?php include_once "../header.php"?>
+<?php include_once "../header.php" ?>
 <link rel="stylesheet" href="../../../public/css/home.css" />
 </head>
 
@@ -9,13 +9,14 @@
             <?php include_once "leftNavbar.php" ?>
 
             <!------------------------- post-section --------------------->
-            <?php include_once "postSection.php"?>
+            <?php include_once "postSection.php" ?>
 
         </div>
 
     </div>
 
-    <?php include_once "notificationSidebar.php"?>
+    <?php include_once "notificationSidebar.php" ?>
+
 
     <script src="../../../public/js/home.js"></script>
 </body>

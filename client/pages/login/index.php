@@ -21,7 +21,7 @@
 
                     <label for="loginPassword" class="form-label mt-3 text-white">Password</label>
                     <div class="position-relative">
-                        <input type="password" name="loginPassword" id="pswd"
+                        <input type="password" name="loginPassword" id="password"
                             class="form-control bg-dark p-2 text-white"
                             style="border: 0.2px solid gray; border-radius: 6px; padding-right: 40px;" required>
                         <img src="../../../public/images/login/close-eye.png" alt="Toggle Password"

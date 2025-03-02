@@ -51,7 +51,7 @@ $(document).ready(function () {
                 email: true,
             },
 
-            pswd: {
+            password: {
                 required: true,
                 minlength: 8,
                 maxlength: 20,

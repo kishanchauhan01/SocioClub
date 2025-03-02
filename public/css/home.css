@@ -45,7 +45,7 @@
     width: 18%;
 }
 
-.notification-link  {
+.notification-link {
     border-radius: 20px;
     padding: 5px;
     transition: all 0.5s;
@@ -126,7 +126,7 @@
     /* Add a background to prevent transparency issues */
     z-index: 10;
     /* Ensures it stays above other elements */
-    
+
 }
 
 
@@ -170,19 +170,22 @@
     border-radius: 50%;
 }
 
-.posts-photos img{
+.posts-photos img {
     border: 1px solid wheat;
 }
 
 .post-description {
     position: relative;
     overflow: hidden;
-    max-height: 70px; /* Adjust height based on requirement */
+    max-height: 70px;
+    /* Adjust height based on requirement */
     transition: max-height 0.3s ease-in-out;
 }
+
 .post-description.expanded {
     max-height: none;
 }
+
 .read-more-btn {
     cursor: pointer;
     color: blue;
@@ -197,7 +200,7 @@
 }
 
 #comment {
-    cursor: pointer ;
+    cursor: pointer;
 }
 
 #share {
@@ -225,4 +228,22 @@
 
 .mobile-links ul li img {
     width: 30px;
+}
+
+.modal-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group-text {
+    font-size: 1.2rem;
+}
+
+.list-group-item a {
+    transition: 0.2s;
+}
+
+.list-group-item a:hover {
+    color: #0d6efd;
+    /* Bootstrap primary color */
+    text-decoration: underline;
 }
