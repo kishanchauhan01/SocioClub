@@ -6,12 +6,12 @@
                 class="list-unstyled text-white d-md-flex justify-content-md-start align-items-md-center overflow-x-auto d-flex justify-content-start align-items-center">
                 <li class="px-2">
                     <div class="thought-profile">
-                        <img src="../../../public/images/homess/user2.jpg" alt="">
+                        <img src="../../../public/images/homess/user2.jpg" alt="" data-user="heee_jinn" data-thought="Enjoying a peaceful sunset!" class="story">
                     </div>
                 </li>
                 <li class="px-2">
                     <div class="thought-profile">
-                        <img src="../../../public/images/homess/post1.jpg" alt="">
+                        <img src="../../../public/images/homess/post1.jpg" alt="" data-user="kishan" data-thought="Never stop learning!" class="story">
                     </div>
                 </li>
                 <li class="px-2">
@@ -253,6 +253,24 @@
                             style="border-radius: 50%; width: 40px;"></a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Thought Popup Modal -->
+<div class="modal fade" id="thoughtModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../../../public/images/homess/user2.jpg" alt="" width="50px" class="rounded-circle px-2">
+                <a href="../userprofile/" class="modal-title fs-5" id="thoughtUser"></a>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="thoughtText"></p>
+            </div>
         </div>
     </div>
 </div>

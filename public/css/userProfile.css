@@ -131,6 +131,10 @@
     margin-left: 50px !important;
 }
 
+.post-img {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .banner {
         height: 16% !important;

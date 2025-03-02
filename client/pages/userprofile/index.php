@@ -20,22 +20,33 @@
                 </div>
                 <div class="user-info h-25">
                     <div class="usernames h-75 d-flex flex-column justify-content-end gap-1">
-                        <h3 class="text-white fs-3 fw-bold">Kishan Chauhan</h3>
+                        <div class="d-md-flex justify-content-md-between w-md-100">
+                            <h3 class="text-white fs-3 fw-bold w-md-50">Kishan Chauhan</h3>
+                            <div class="d-md-flex justify-content-md-start w-md-50 text-white-50 flex-md-wrap">
+                                <p><b><i>"Each dream you leave behind is a part of your future that will <span class="text-warning"> no longer </span>exist."</i></b></p>
+                            </div>
+                        </div>
                         <p class="text-white-50">kishan007</p>
-                        <div></div>
+
 
                     </div>
                     <div class="follwers-followings h-25 text-white">
                         <ul class="h-100 d-flex w-75 justify-content-around align-items-end pb-2">
-                            <a href=""><li>2 posts</li></a>
-                            <a href=""><li>45 follwers</li></a>
-                            <a href=""><li>58 following</li></a>
+                            <a href="#all-posts">
+                                <li>2 posts</li>
+                            </a>
+                            <a href="./followers.php">
+                                <li>45 follwers</li>
+                            </a>
+                            <a href="./followers.php">
+                                <li>58 following</li>
+                            </a>
                         </ul>
-                        
+
                     </div>
 
                 </div>
-                <div class="posts h-50 overflow-y-scroll">
+                <div class="posts h-50 overflow-y-scroll" id="all-posts">
                     <div class="creat-posts h-25 d-flex justify-content-center align-items-center gap-2">
                         <a href="../create_post/" class="btn btn-outline-secondary h-50">+ Create Post</a>
                         <a class="btn btn-outline-secondary h-50">+ Add Thought</a>
@@ -51,7 +62,7 @@
                             <div class="col-4">
                                 <img src="../../../public/images/homess/post3.jpg" alt="" class="w-100">
                             </div>
-                            
+
                         </div>
 
                     </div>

@@ -16,39 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Sample static search data
-const searchData = [
-    "Home Page",
-    "Notifications",
-    "Messages",
-    "User Profile",
-    "Settings",
-    "Explore People",
-    "Trending Posts",
-    "Privacy Policy",
-    "Help Center",
-];
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all story images
+    document.querySelectorAll(".story").forEach((story) => {
+        story.addEventListener("click", function () {
+            // Get user name and thought from data attributes
+            let userName = this.getAttribute("data-user");
+            let userThought = this.getAttribute("data-thought");
 
-function performSearch() {
-    let query = document.getElementById("searchInput").value.toLowerCase();
-    let resultsContainer = document.getElementById("searchResults");
-    resultsContainer.innerHTML = ""; // Clear previous results
+            // Update modal content
+            document.getElementById("thoughtUser").textContent = userName;
+            document.getElementById("thoughtText").textContent = userThought;
 
-    if (query.trim() !== "") {
-        let filteredResults = searchData.filter((item) =>
-            item.toLowerCase().includes(query)
-        );
-
-        if (filteredResults.length > 0) {
-            filteredResults.forEach((result) => {
-                let li = document.createElement("li");
-                li.className =
-                    "list-group-item bg-dark text-white border-0 py-2";
-                li.innerHTML = `<a href="#" class="text-decoration-none text-white">${result}</a>`;
-                resultsContainer.appendChild(li);
-            });
-        } else {
-            resultsContainer.innerHTML = `<li class="list-group-item bg-dark text-secondary border-0 py-2">No results found</li>`;
-        }
-    }
-}
+            // Show Bootstrap modal
+            let thoughtModal = new bootstrap.Modal(
+                document.getElementById("thoughtModal")
+            );
+            thoughtModal.show();
+        });
+    });
+});

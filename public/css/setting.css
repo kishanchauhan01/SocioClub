@@ -4,7 +4,7 @@
 }
 
 .nav-options ul li:hover {
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .go-home a {
@@ -13,32 +13,37 @@
 }
 
 .go-home a:hover {
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.2);;
 }
 
-.nav-options ul .account {
+/* .nav-options ul .account {
     background-color: black;
-}
+} */
 .form-control {
     background-color: black !important;
     color: white !important;
     border: 1px solid #555;
 }
+
 .form-control::placeholder {
     color: #bbb !important;
 }
+
 .form-select {
     background-color: black !important;
     color: white !important;
     border: 1px solid #555;
 }
+
 .form-check-input {
     background-color: black !important;
     border: 1px solid white !important;
 }
+
 .form-check-label {
     color: white !important;
 }
+
 .btn-primary {
     background-color: #0d6efd;
     border: none;
@@ -49,7 +54,8 @@
     background-color: black !important;
     color: white !important;
     border: 1px solid #555;
-    padding-right: 40px; /* Make space for the icon */
+    padding-right: 40px;
+    /* Make space for the icon */
     position: relative;
 }
 
@@ -86,13 +92,22 @@
 .custom-switch {
     width: 50px;
     height: 25px;
-    background-color: #343a40; /* Dark background */
-    border: 2px solid #6c757d; /* Soft border */
+    background-color: #343a40;
+    /* Dark background */
+    border: 2px solid #6c757d;
+    /* Soft border */
     transition: 0.4s;
     cursor: pointer;
 }
 
 .custom-switch:checked {
-    background-color: #f8c102; /* Golden glow for light mode */
+    background-color: #f8c102;
+    /* Golden glow for light mode */
     border-color: #ffc107;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Light highlight */
+    border-radius: 5px;
 }

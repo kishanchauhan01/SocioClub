@@ -33,8 +33,7 @@
             <li class="search-link d-md-flex justify-content-md-between align-items-md-center">
                 <img src="../../../public/images/homess/search.png" alt="">
                 <div class="d-md-flex justify-content-center w-75">
-                    <a href="#" class="text-decoration-none text-white fw-bolder fs-5"
-                        data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <a href="../search/" class="text-decoration-none text-white fw-bolder fs-5">
                         Search
                     </a>
                 </div>
@@ -64,28 +63,6 @@
             <a href="../userprofile/">
                 <h5>Kishan</h5>
             </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- Bootstrap Dark Mode Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content bg-dark text-white border-0 rounded-3 shadow-lg">
-            <div class="modal-header border-bottom border-secondary">
-                <h5 class="modal-title" id="searchModalLabel">🔍 Search</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <span class="input-group-text bg-secondary border-0 text-white">🔎</span>
-                    <input type="text" class="form-control bg-dark text-white border-0" id="searchInput" placeholder="Type to search..." onkeyup="performSearch()">
-                </div>
-
-                <!-- Search Results -->
-                <ul class="list-group bg-dark" id="searchResults"></ul>
-            </div>
         </div>
     </div>
 </div>
