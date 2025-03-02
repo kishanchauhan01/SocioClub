@@ -149,7 +149,7 @@
         <!-- Chat Area -->
         <main id="chatArea" class="flex flex-col h-screen w-full md:w-5/6 focus:outline-none focus:ring-2 focus:ring-blue-500 hidden md:block" role="main" aria-label="Chat interface">
             <header class="flex flex-col pt-1.5 pl-2 w-full whitespace-nowrap rounded bg-zinc-800">
-                <div style="background-color: #282B27;" class="flex gap-2 self-start w-full rounded-2xl clickable-profile" onclick="window.location.href='../home/index.php'">
+                <div style="background-color: #282B27;" class="flex gap-2 self-start w-full rounded-2xl clickable-profile" onclick="window.location.href='../userprofile/index.php'">
                     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/bd2f17561c9249ef9149481515aca2d2/f4ae4fef877ac4cfe6540e096988883e270ff5e4d5137c05556e06acf0e83ee4" class="object-contain shrink-0 rounded-full aspect-square w-20 hover:opacity-90 transition-opacity" alt="Profile picture of kishan" />
                     <div class="flex flex-col self-start">
                         <h1 class="self-start text-xl font-black text-white hover:text-gray-100 transition-colors">kishan</h1>
