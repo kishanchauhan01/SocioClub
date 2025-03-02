@@ -10,6 +10,66 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    .chat-section {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    .chat-section ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .chat-section li {
+        margin-bottom: 10px;
+    }
+
+    .chat-input-container {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        background-color: #1B1F23;
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    .chat-input-container input {
+        flex-grow: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #282B27;
+        color: white;
+    }
+
+    .chat-input-container button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    .chat-input-container button:hover {
+        background-color: #45a049;
+    }
+
+    /* Ensure the chat area is scrollable and takes up remaining space */
+    #chatArea {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /* Ensure the chat section takes up remaining space and is scrollable */
+    #chatArea .chat-section {
+        flex-grow: 1;
+        overflow-y: auto;
+    }
 </style>
 
 <body class="bg-gray-900 text-white">
@@ -121,8 +181,8 @@
             </header>
 
             <!-- Chat Section -->
-            <section class="flex flex-col flex-grow gap-5 justify-end items-start text-black mt-4 overflow-y-auto" role="log" aria-label="Chat messages">
-                <ul class="list-none p-0 m-0 w-full">
+            <section class="chat-section" role="log" aria-label="Chat messages">
+                <ul id="chatMessages" class="list-none p-0 m-0 w-full">
                     <li class="flex justify-start mb-2">
                         <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
                             <p class="select-text">Hey, shu kar chho </p>
@@ -156,9 +216,9 @@
                 </ul>
             </section>
 
-            <footer class="flex flex-wrap gap-5 justify-between pr-2 pl-5 mt-5 w-full text-3xl rounded-2xl bg-slate-800 text-neutral-400 hover:bg-slate-700 transition-colors" style="margin-top: auto;">
+            <footer class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="chat something here :)" class="bg-transparent border-none outline-none text-neutral-400 flex-grow placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg transition-all" aria-label="Chat input" />
-                <button class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
+                <button onclick="sendMessage()" class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
                     <img loading="lazy" src="../../../public/images/chat/send.svg" class="object-contain shrink-0 w-[4.4rem] hover:opacity-90 transition-opacity" style="aspect-ratio: 1.16" alt="Send button" />
                 </button>
             </footer>
@@ -201,6 +261,26 @@
             }
         }
 
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            if (chatInput.value.trim() !== '') {
+                const newMessage = document.createElement('li');
+                newMessage.classList.add('flex', 'justify-end', 'mb-2');
+
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('bg-green-500', 'text-white', 'p-3', 'rounded-lg', 'max-w-xs');
+                messageDiv.textContent = chatInput.value;
+
+                newMessage.appendChild(messageDiv);
+                chatMessages.appendChild(newMessage);
+
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
         // Optional: Handle window resize to adjust layout dynamically
         window.addEventListener('resize', () => {
             const chatArea = document.getElementById('chatArea');
@@ -220,4 +300,4 @@
 
 </body>
 
-</html> 
+</html>

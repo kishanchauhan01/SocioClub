@@ -2,6 +2,16 @@
 <link rel="stylesheet" href="../../../public/css/setting.css">
 </head>
 <style>
+    /* Hide scrollbar for all elements */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for Firefox */
+    * {
+        scrollbar-width: none;
+    }
+
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
@@ -10,23 +20,81 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    .chat-section {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    .chat-section ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .chat-section li {
+        margin-bottom: 10px;
+    }
+
+    .chat-input-container {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        background-color: #1B1F23;
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    .chat-input-container input {
+        flex-grow: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #282B27;
+        color: white;
+    }
+
+    .chat-input-container button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    .chat-input-container button:hover {
+        background-color: #45a049;
+    }
+
+    /* Ensure the chat area is scrollable and takes up remaining space */
+    #chatArea {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /* Ensure the chat section takes up remaining space and is scrollable */
+    #chatArea .chat-section {
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    /* Hide chat area on mobile when in profile feed */
+    @media (max-width: 767px) {
+        #chatArea {
+            display: none;
+        }
+    }
 </style>
 
 <body class="bg-gray-900 text-white">
 
     <!-- Top Bar for smaller screens -->
     <div class="md:hidden fixed top-0 left-0 right-0 bg-gray-800 z-30 p-2 flex justify-between items-center">
-        <!-- Hamburger Icon (shown in profile feed) -->
-        <button id="hamburgerButton" onclick="toggleSidebar()" class="text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
-
-        <!-- Back Button (shown in chat area) -->
-        <button id="backButton" onclick="goBackToProfileFeed()" class="text-white focus:outline-none hidden">
+        <!-- Back Button (shown in profile feed) -->
+        <button id="backButtonProfile" onclick="window.location.href='../home/index.php'" class="text-white focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
@@ -121,8 +189,8 @@
             </header>
 
             <!-- Chat Section -->
-            <section class="flex flex-col flex-grow gap-5 justify-end items-start text-black mt-4 overflow-y-auto" role="log" aria-label="Chat messages">
-                <ul class="list-none p-0 m-0 w-full">
+            <section class="chat-section" role="log" aria-label="Chat messages">
+                <ul id="chatMessages" class="list-none p-0 m-0 w-full">
                     <li class="flex justify-start mb-2">
                         <div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">
                             <p class="select-text">Hey, shu kar chho </p>
@@ -156,9 +224,9 @@
                 </ul>
             </section>
 
-            <footer class="flex flex-wrap gap-5 justify-between pr-2 pl-5 mt-5 w-full text-3xl rounded-2xl bg-slate-800 text-neutral-400 hover:bg-slate-700 transition-colors" style="margin-top: auto;">
+            <footer class="chat-input-container">
                 <input type="text" id="chatInput" placeholder="chat something here :)" class="bg-transparent border-none outline-none text-neutral-400 flex-grow placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg transition-all" aria-label="Chat input" />
-                <button class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
+                <button onclick="sendMessage()" class="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2 hover:bg-slate-600 active:bg-slate-500 transition-colors" aria-label="Send message">
                     <img loading="lazy" src="../../../public/images/chat/send.svg" class="object-contain shrink-0 w-[4.4rem] hover:opacity-90 transition-opacity" style="aspect-ratio: 1.16" alt="Send button" />
                 </button>
             </footer>
@@ -174,14 +242,14 @@
         function showChatArea() {
             const chatArea = document.getElementById('chatArea');
             const profileFeed = document.getElementById('profileFeed');
-            const hamburgerButton = document.getElementById('hamburgerButton');
+            const backButtonProfile = document.getElementById('backButtonProfile');
             const backButton = document.getElementById('backButton');
 
             // Hide profile feed and show chat area on smaller screens
             if (window.innerWidth < 768) {
                 profileFeed.classList.add('hidden');
                 chatArea.classList.remove('hidden');
-                hamburgerButton.classList.add('hidden');
+                backButtonProfile.classList.add('hidden');
                 backButton.classList.remove('hidden');
             }
         }
@@ -189,15 +257,35 @@
         function goBackToProfileFeed() {
             const chatArea = document.getElementById('chatArea');
             const profileFeed = document.getElementById('profileFeed');
-            const hamburgerButton = document.getElementById('hamburgerButton');
+            const backButtonProfile = document.getElementById('backButtonProfile');
             const backButton = document.getElementById('backButton');
 
             // Hide chat area and show profile feed on smaller screens
             if (window.innerWidth < 768) {
                 chatArea.classList.add('hidden');
                 profileFeed.classList.remove('hidden');
-                hamburgerButton.classList.remove('hidden');
+                backButtonProfile.classList.remove('hidden');
                 backButton.classList.add('hidden');
+            }
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            if (chatInput.value.trim() !== '') {
+                const newMessage = document.createElement('li');
+                newMessage.classList.add('flex', 'justify-end', 'mb-2');
+
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('bg-green-500', 'text-white', 'p-3', 'rounded-lg', 'max-w-xs');
+                messageDiv.textContent = chatInput.value;
+
+                newMessage.appendChild(messageDiv);
+                chatMessages.appendChild(newMessage);
+
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
         }
 
